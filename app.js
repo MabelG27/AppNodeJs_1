@@ -17,6 +17,4 @@ function onConnect(user){
     client.send('');
 }
 
-
-
 app.listen(port, () => console.log(`App listening on port ${port}`));

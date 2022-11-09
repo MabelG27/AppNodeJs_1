@@ -14,7 +14,9 @@ function onError(user, err){
 let message = "Hola Mundo!!!";
 function onConnect(user){
     console.log('Conectado', user, name);
-    client.send('');
+    client.send('/exchange/web-service-endpoint', message, {'content-type': 'text/plain'});
 }
+
+client.connect('guest','guest', onConnect, onError);
 
 app.listen(port, () => console.log(`App listening on port ${port}`));
